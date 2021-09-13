@@ -7,6 +7,7 @@ clear;
 close all
 clc
 addpath(genpath('./utils'));
+addpath(genpath('./results'));
 %profile on
 N = 256;  % spatial size
 [a,b]=DDDRSNNP(N);
@@ -41,7 +42,7 @@ colormap('jet')
 
 m = max(T(:));
 minimum = min(T(:));
-text = "design-mask_optimize_"+num2str(N)+"x"+num2str(N);
+text = "results/design-mask_optimize_"+num2str(N)+"x"+num2str(N);
 save(text,'mask','G','minimum');
 stand = std(T(:));
 prom = mean(T(:));
@@ -69,10 +70,10 @@ colormap('jet')
 [T] = ComputeDistance(G);
 m = max(T(:));
 minimum = min(T(:));
-text = "design-mask_random_"+num2str(N)+"x"+num2str(N);
+text = "results/design-mask_random_"+num2str(N)+"x"+num2str(N);
 save(text,'mask','G','minimum');
 stand = std(T(:));
 prom = mean(T(:));
 texto = "Minimum = " + num2str(minimum) + ", Maximun = " + num2str(m) + ", Standart Desv = " + num2str(stand) + ", Mean = " + num2str(prom);
 subplot(2,2,2),imagesc(T),title(texto, 'FontSize', 12), colorbar;
-saveas(gcf,'figure3','epsc')
+saveas(gcf,'results/figure3','epsc')
