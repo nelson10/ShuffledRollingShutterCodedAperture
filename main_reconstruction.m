@@ -39,6 +39,7 @@ for i=1:N
     Y2 = Y2+ (data(:,:,i).*mask(:,:,i));
 end
 imagesc(Y2), title('Compressive Measurements ')
+colormap('gray')
 Y2 = mat2gray(Y2);
 disp('Results')
 
