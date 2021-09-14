@@ -26,7 +26,7 @@ If you use this code, please consider citing our paper with the following Bibtex
 
 ```
 @ARTICLE{9534664,
-  author={Diaz, Nelson and Felipe, Guzman and Arguello, Henry},
+  author={Diaz, Nelson and Guzman, Felipe and Vera, Esteban},
   journal={Optics Express}, 
   title={Optimal Compressive Temporal Imaging using a Shuffled Rolling Shutter}, 
   year={2021},
