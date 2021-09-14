@@ -1,3 +1,7 @@
+% Created by: Ph.D Nelson Eduardo Díaz Díaz
+% Post-doctorador Pontíficia Universidad Católica de Valparaíso (PUCV)
+% Date: 17 May 2021
+
 % Solution using The 3-D N2-Queens problem
 clear;
 close all
