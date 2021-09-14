@@ -22,9 +22,9 @@ git clone https://github.com/nelson10/RollingShutterCodedAperture.git
 
 The datasets could be download from the following [link](https://www.youtube.com/watch?v=LrzWrvOjJm8)
 
-The files should be placed in the Data folder of this repository.
+The files should be placed in the dataset folder of this repository.
 
-If you use this code or dataset Hen_FullSpectral.mat, please consider citing our paper with the following Bibtex code:
+If you use this code, please consider citing our paper with the following Bibtex code:
 
 ```
 @ARTICLE{9534664,
