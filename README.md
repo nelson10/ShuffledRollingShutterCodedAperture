@@ -6,7 +6,7 @@ This repository contains the code to reproduce the results presented in the pape
 
 *N. Diaz, F. Guzman and E. Vera, "Optimal Compressive Temporal Imaging using a Shuffled Rolling Shutter," in Optics Express.
 
-This repository aims to adaptive design the coded apertures from compressive spectral images acquired with a multisensor camera. The classification is performed using the captured compressive projections.
+This repository aims to design the coded apertures for rolling shutter video. The reconstruction is performed using the captured compressive projection.
 
 ## Usage
 
@@ -20,12 +20,25 @@ git clone https://github.com/nelson10/RollingShutterCodedAperture.git
 
 ## Datasets
 
-The datasets could be download from the following [link](http://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes)
+The datasets could be download from the following [link](https://www.youtube.com/watch?v=LrzWrvOjJm8)
 
 The files should be placed in the Data folder of this repository.
 
 If you use this code or dataset Hen_FullSpectral.mat, please consider citing our paper with the following Bibtex code:
 
+```
+@ARTICLE{9534664,
+  author={Diaz, Nelson and Felipe, Guzman and Arguello, Henry},
+  journal={Optics Express}, 
+  title={Optimal Compressive Temporal Imaging using a Shuffled Rolling Shutter}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={}}
+```
+
+The published version is available at this [link](put link here)
 
 
 ## Abstract
