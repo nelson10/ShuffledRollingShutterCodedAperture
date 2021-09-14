@@ -39,6 +39,7 @@ for k=1:1
 end
 
 Y = sampling(data,mask,N); % compute compressive measurements with designed mask
+figure(1)
 imagesc(Y), title('Compressive Measurements using Designed Coded Apertures')
 colormap('gray')
 
@@ -53,6 +54,7 @@ implay(Xrec),title('Interpolation with Designed Coded Apertures')
 
 [mask] = random_Mask(N);
 Y = sampling(data,mask,N); % compute compressive measurements with random mask
+figure(2)
 imagesc(Y), title('Compressive Measurements using Random Coded Apertures')
 colormap('gray')
 
