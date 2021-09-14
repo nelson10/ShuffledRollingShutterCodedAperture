@@ -1,5 +1,3 @@
-# RollingShutterCodedAperture
-
 # Optimal Compressive Temporal Imaging using a Shuffled Rolling Shutter
 
 This repository contains the code to reproduce the results presented in the paper following paper:
