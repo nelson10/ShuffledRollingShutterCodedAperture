@@ -59,6 +59,6 @@ colormap('gray')
 [J] = increaseExposure(Y,mask,N);
 % Reconstruction using random coded apertures
 [Xrec] = interpolation(J);
-[p,s,r] = metrics(data,Xrec);
 disp('Interpolation of Temporal Rolling Shutter Compressive Measurements Captured using Random Coded Apertures')
+[p,s,r] = metrics(data,Xrec);
 implay(Xrec),title('Interpolation with Random Coded Apertures')
