@@ -33,8 +33,8 @@ for i = 1:N
 end
 
 
-for k=4:4
-    alldataset = {'traffic','step1','horse2','dogo2'};
+for k=1:1
+    alldataset = {'wine2','wave','splash'};
     dataset = alldataset{k};
     load(dataset+".mat")
 end
