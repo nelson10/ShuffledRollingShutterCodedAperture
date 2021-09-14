@@ -19,7 +19,6 @@ N = 256;  % spatial size
 G = zeros(N,N);
 mask = zeros(N,N,N);
 psnr = zeros(N,N);
-Y2 = zeros(N,N); % 
 temp0 =[];
 temp1 =[];
 a1 = a(1);
@@ -39,40 +38,27 @@ for k=1:1
     load(dataset+".mat")
 end
 
-for i=1:N
-    Y2 = Y2+ (data(:,:,i).*mask(:,:,i));
-end
-imagesc(Y2), title('Compressive Measurements ')
+Y = sampling(data,mask,N); % compute compressive measurements with designed mask
+imagesc(Y), title('Compressive Measurements using Designed Coded Apertures')
 colormap('gray')
-Y2 = mat2gray(Y2);
-disp('Results')
 
-h=6;
-c=0;
-L = N;
-for i=1:L
-    if(i >= h+1 && i <= L-(h+1))
-        c =c + 1;
-        g(:,:,c) = sum(mask(:,:,i-h:i+h-1),3);
-    elseif(i < h+1)
-        c = c + 1;
-        ind = i-h:i+h-1;
-        idx = 0 < i-h:i+h-1;
-        g(:,:,c) = sum(mask(:,:,ind(idx)),3);
-    else
-        c = c + 1;
-        ind = i-h:i+h-1;
-        idx = L > i-h:i+h-1;
-        g(:,:,c) = sum(mask(:,:,ind(idx)),3);
-    end
-end
+[J] = increaseExposure(Y,mask,N);
 
-sum(g(:))/numel(g)
-for j=1:L
-    J(:,:,j) = (g(:,:,j).*Y2); 
-    %imagesc(J(:,:,j))
-    %pause(0.025)
-end
-
+% Reconstruction using designed coded apertures
 [Xrec] = interpolation(J);
-implay(Xrec)
+disp('Interpolation of Temporal Rolling Shutter Compressive Measurements Captured using Designed Coded Apertures')
+[p,s,r] = metrics(data,Xrec);
+
+implay(Xrec),title('Interpolation with Designed Coded Apertures')
+
+[mask] = random_Mask(N);
+Y = sampling(data,mask,N); % compute compressive measurements with random mask
+imagesc(Y), title('Compressive Measurements using Random Coded Apertures')
+colormap('gray')
+
+[J] = increaseExposure(Y,mask,N);
+% Reconstruction using random coded apertures
+[Xrec] = interpolation(J);
+[p,s,r] = metrics(data,Xrec);
+disp('Interpolation of Temporal Rolling Shutter Compressive Measurements Captured using Random Coded Apertures')
+implay(Xrec),title('Interpolation with Random Coded Apertures')
