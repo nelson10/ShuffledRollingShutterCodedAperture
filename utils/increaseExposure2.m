@@ -4,7 +4,7 @@ for j=1:N
     J(:,:,j) = ((mask(:,:,j).*Y))./255; 
 end
 
-nm = round(0.04*(N));
+nm = round(0.033*(N))
 N1 = N/nm;
 for jj=1:N1
     dmd(:,:,jj) = sum(mask(:,:,1+(jj-1)*(nm):(jj)*nm),3);
