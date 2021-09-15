@@ -1,16 +1,16 @@
 function [Xrec] = Demo_RSvideo_Tensor(J)
 
-L =size(J,3);
+[N,M,L] =size(J);
 X = J;
 fprintf('--------------TR_LRTV2-------------------\n');
 
-temp = zeros(L,L,3,L);
+temp = zeros(N,M,3,L);
 for i=1:L
     for j=1:3
         temp(:,:,j,i) =X(:,:,i);
     end
-    temp(:,:,2,i) = ones(L,L);
-    temp(:,:,3,i) = ones(L,L);
+    %temp(:,:,2,i) = ones(N,N);
+    %temp(:,:,3,i) = ones(N,N);
 end
 for ii = 1:L
     %A = X(:,:,(3*(ii-1))+1:ii*3);
@@ -53,7 +53,7 @@ for ii = 1:L
 end
 
 L =size(result,3);
-implay(result)
+%implay(result)
 [perform_RSE,perform_PSNR] = performance_eval();
 
 %%%%
