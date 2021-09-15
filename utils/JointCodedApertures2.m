@@ -1,4 +1,4 @@
-function [X] = increaseExposure2(Y,mask,N)
+function [X] = JointCodedApertures2(Y,mask,N)
 
 for j=1:N
     J(:,:,j) = ((mask(:,:,j).*Y))./255; 
