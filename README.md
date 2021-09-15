@@ -13,7 +13,7 @@ This code was written using Matlab R2019b. It should be downloaded the RollingSh
 ```
 git clone https://github.com/nelson10/RollingShutterCodedAperture.git
 ```
-2. To run the code using either the function main_reconstruction.m that performs the sensing, coded aperture design, and the reconstruction using the compressive rolling shutter measurements.
+2. To run the code using either the function main_reconstruction.m that performs the sensing, coded aperture design, and the reconstruction using the compressive rolling shutter measurements using two methods, interpolation, and tensor compleition.
 
 
 ## Datasets
