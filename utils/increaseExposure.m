@@ -18,7 +18,8 @@ for i=1:N
     end
 end
 
-sum(g(:))/numel(g)
+sample =100*(sum(g(:))/numel(g));
+disp("number of samples " + num2str(sample) + "%");
 
 for j=1:N
     J(:,:,j) = (g(:,:,j).*Y); 
