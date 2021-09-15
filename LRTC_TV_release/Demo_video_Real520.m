@@ -47,6 +47,7 @@ for ii = 1:L
     %Z_TRLRTV2=LRTC_TV_II(index(:,1), value, lambda_1, lambda_2 ,alpha(1), beta(1), [256 256 1], 1 );
     %result(:,:,(3*(ii-1))+1:ii*3) = Z_TRLRTV2;
     result(:,:,ii)=Z_TRLRTV2(:,:,1);
+    ii
 end
 
 L =size(result,3);
