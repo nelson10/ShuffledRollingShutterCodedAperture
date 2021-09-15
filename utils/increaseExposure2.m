@@ -11,4 +11,6 @@ for jj=1:N1
     X(:,:,jj) = sum(J(:,:,1+(jj-1)*(nm):(jj)*nm),3);
 end
 X = X./max(X(:));
+sample =100*(sum(dmd(:))/numel(dmd));
+disp("number of samples " + num2str(sample) + "%");
 end
