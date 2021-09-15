@@ -4,7 +4,7 @@ This repository contains the code to reproduce the results presented in the pape
 
 *N. Diaz, F. Guzman and E. Vera, "Optimal Compressive Temporal Imaging using a Shuffled Rolling Shutter," in Optics Express.
 
-This repository aims to design the coded apertures for rolling shutter video. The reconstruction is performed using the captured compressive projection.
+This repository aims to design the coded apertures for rolling shutter video. The reconstruction is performed using the captured compressive projection using two methods, interpolation, and tensor compleition.
 
 ## Usage
 
