@@ -1,4 +1,4 @@
-function [J] = increaseExposure(Y,mask,N)
+function [J] = JointCodedApertures(Y,mask,N)
 h=6;
 c=0;
 for i=1:N
