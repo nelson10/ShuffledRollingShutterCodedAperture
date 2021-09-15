@@ -12,5 +12,5 @@ for jj=1:N1
 end
 X = X./max(X(:));
 sample =100*(sum(dmd(:))/numel(dmd));
-disp("number of samples " + num2str(sample) + "%");
+disp("number of non-zero values " + num2str(sample) + "%");
 end
