@@ -48,7 +48,7 @@ figure(1)
 imagesc(Y), title('Compressive Measurements using Designed Coded Apertures')
 colormap('gray')
 
-[J] = increaseExposure2(Y,mask,N);
+[J] = JointCodedApertures2(Y,mask,N);
 
 % Reconstruction using designed coded apertures
 %[Xrec] = interpolation(J);
@@ -71,7 +71,7 @@ figure(2)
 imagesc(Y), title('Compressive Measurements using Random Coded Apertures')
 colormap('gray')
 
-[J] = increaseExposure2(Y,mask,N);
+[J] = JointCodedApertures2(Y,mask,N);
 % Reconstruction using random coded apertures
 %[Xrec] = interpolation(J);
 [Xrec] = Demo_RSvideo_Tensor(J);
