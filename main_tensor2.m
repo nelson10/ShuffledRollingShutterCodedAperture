@@ -61,7 +61,7 @@ implay(Xrec),title('Interpolation with Designed Coded Apertures')
 [mask] = random_Mask(N);
 Y = sampling(data,mask,N); % compute compressive measurements with random mask
 
-nm = round(0.04*(N));
+nm = round(0.033*(N));
 N1 = N/nm;
 ind = round(linspace(1,256,N1));
 data1 = data(:,:,ind);
