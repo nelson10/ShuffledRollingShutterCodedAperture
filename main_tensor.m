@@ -53,7 +53,7 @@ colormap('gray')
 
 % Reconstruction using designed coded apertures
 %[Xrec] = interpolation(J);
-[Xrec] = Demo_video_Real520(J);
+[Xrec] = Demo_RSvideo_Tensor(J);
 disp('Interpolation of Temporal Rolling Shutter Compressive Measurements Captured using Designed Coded Apertures')
 [p,s,r] = metrics(data,Xrec);
 
@@ -68,7 +68,7 @@ colormap('gray')
 [J] = increaseExposure(Y,mask,N);
 % Reconstruction using random coded apertures
 %[Xrec] = interpolation(J);
-[Xrec] = Demo_video_Real520(J);
+[Xrec] = Demo_RSvideo_Tensor(J);
 disp('Interpolation of Temporal Rolling Shutter Compressive Measurements Captured using Random Coded Apertures')
 [p,s,r] = metrics(data,Xrec);
 implay(Xrec),title('Interpolation with Random Coded Apertures')
