@@ -8,7 +8,7 @@ This repository aims to design the coded apertures for rolling shutter video. Th
 
 ## Usage
 
-This code was written using Matlab R2019b. It should be downloaded the RollingShutterCodedAperture repository
+This code was written using Matlab R2020b. It should be downloaded the RollingShutterCodedAperture repository
 1. Download this repository via git 
 ```
 git clone https://github.com/nelson10/RollingShutterCodedAperture.git
