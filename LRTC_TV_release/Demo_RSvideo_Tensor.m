@@ -61,6 +61,7 @@ for i=1:L
     frame = result(:,:,i);
     Xrec(:,:,i) = frame./max(frame(:));
 end
+Xrec = mat2gray(Xrec);
 
 % for i=1:L
 %     p(i) = psnr(gt1(:,:,i),Xrec(:,:,i));
