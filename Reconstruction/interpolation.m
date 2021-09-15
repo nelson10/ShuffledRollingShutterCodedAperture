@@ -13,5 +13,5 @@ for j=1:L
     end
     Xrec(:,:,j) = X;
 end
-%implay(Xrec)
+Xrec = Xrec./max(Xrec(:));
 end
