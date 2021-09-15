@@ -210,7 +210,7 @@ function [tensor_Z  ] = LRTC_TV_II(index, value, lambda_1,lambda_2, alpha, beta,
         end
         
         %double(tensor_Z)
-        figure(9);imshow(double(tensor_Z));
+        %figure(9);imshow(double(tensor_Z));
         iteration = iteration + 1;
                 
     end
