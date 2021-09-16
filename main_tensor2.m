@@ -59,10 +59,10 @@ nnz = 0.04; % number of non-zero elements in the Tensor
 % Reconstruction using designed coded apertures
 %[Xrec] = interpolation(J);
 [Xrec] = Demo_RSvideo_Tensor(J);
-disp('Interpolation of Temporal Rolling Shutter Compressive Measurements Captured using Designed Coded Apertures')
+disp('Tensor Completion of Temporal Rolling Shutter Compressive Measurements Captured using Designed Coded Apertures')
 [p,s,r] = metrics(gt,Xrec);
 
-implay(Xrec),title('Interpolation with Designed Coded Apertures')
+implay(Xrec),title('Tensor Completion with Designed Coded Apertures')
 
 [mask] = random_Mask(N);
 Y = sampling(data,mask,N); % compute compressive measurements with random mask
@@ -75,6 +75,6 @@ colormap('gray')
 % Reconstruction using random coded apertures
 %[Xrec] = interpolation(J);
 [Xrec] = Demo_RSvideo_Tensor(J);
-disp('Interpolation of Temporal Rolling Shutter Compressive Measurements Captured using Random Coded Apertures')
+disp('Completion  of Temporal Rolling Shutter Compressive Measurements Captured using Random Coded Apertures')
 [p,s,r] = metrics(gt,Xrec);
-implay(Xrec),title('Interpolation with Random Coded Apertures')
+implay(Xrec),title('Tensor Completion with Random Coded Apertures')
