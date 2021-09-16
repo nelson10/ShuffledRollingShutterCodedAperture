@@ -48,7 +48,7 @@ Y = sampling(data,mask,N); % compute compressive measurements with designed mask
 figure(1)
 imagesc(Y), title('Compressive Measurements using Designed Coded Apertures')
 colormap('gray')
-nnz = 0.04; % number of non-zero elements in the Tensor
+nnz = 0.03; % number of non-zero elements in the Tensor
 % nm = round(nnz*(N));
 % N1 = N/nm;
 % ind = round(linspace(1,256,N1));
