@@ -49,10 +49,10 @@ figure(1)
 imagesc(Y), title('Compressive Measurements using Designed Coded Apertures')
 colormap('gray')
 nnz = 0.04; % number of non-zero elements in the Tensor
-nm = round(nnz*(N));
-N1 = N/nm;
-ind = round(linspace(1,256,N1));
-gt = data(:,:,ind);
+% nm = round(nnz*(N));
+% N1 = N/nm;
+% ind = round(linspace(1,256,N1));
+% gt = data(:,:,ind);
 
 [J,gt] = JointCodedApertures2(Y,mask,N,nnz,data);
 
