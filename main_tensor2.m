@@ -44,37 +44,37 @@ end
 %    data1(:,:,i) = imresize(data(:,:,i),0.125);
 % end
 Y = sampling(data,mask,N); % compute compressive measurements with designed mask
+
 figure(1)
 imagesc(Y), title('Compressive Measurements using Designed Coded Apertures')
 colormap('gray')
+nnz = 0.04; % number of non-zero elements in the Tensor
+nm = round(nnz*(N));
+N1 = N/nm;
+ind = round(linspace(1,256,N1));
+gt = data(:,:,ind);
 
-[J] = JointCodedApertures2(Y,mask,N);
+[J,gt] = JointCodedApertures2(Y,mask,N,nnz,data);
 
 % Reconstruction using designed coded apertures
 %[Xrec] = interpolation(J);
 [Xrec] = Demo_RSvideo_Tensor(J);
 disp('Interpolation of Temporal Rolling Shutter Compressive Measurements Captured using Designed Coded Apertures')
-[p,s,r] = metrics(data,Xrec);
+[p,s,r] = metrics(gt,Xrec);
 
 implay(Xrec),title('Interpolation with Designed Coded Apertures')
 
 [mask] = random_Mask(N);
 Y = sampling(data,mask,N); % compute compressive measurements with random mask
 
-nm = round(0.033*(N));
-N1 = N/nm;
-ind = round(linspace(1,256,N1));
-data1 = data(:,:,ind);
-data = data1;
-
 figure(2)
 imagesc(Y), title('Compressive Measurements using Random Coded Apertures')
 colormap('gray')
 
-[J] = JointCodedApertures2(Y,mask,N);
+[J,gt] = JointCodedApertures2(Y,mask,N,nnz,data);
 % Reconstruction using random coded apertures
 %[Xrec] = interpolation(J);
 [Xrec] = Demo_RSvideo_Tensor(J);
 disp('Interpolation of Temporal Rolling Shutter Compressive Measurements Captured using Random Coded Apertures')
-[p,s,r] = metrics(data,Xrec);
+[p,s,r] = metrics(gt,Xrec);
 implay(Xrec),title('Interpolation with Random Coded Apertures')
