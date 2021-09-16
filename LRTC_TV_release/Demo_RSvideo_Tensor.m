@@ -4,14 +4,14 @@ function [Xrec] = Demo_RSvideo_Tensor(J)
 X = J;
 fprintf('--------------TR_LRTV2-------------------\n');
 
-temp = zeros(N,M,3,L);
-M1 = floor(L/3);
+temp = zeros(N,M,3,L+(3-mod(L,3)));
+M1 = size(temp,4)/3;
 for i=1:M1
-    %for j=1:3
+    if(i==M1 & mod(L,3)~=0)
+        temp(:,:,:,i+1) =  X(:,:,end-2:end);
+    else
         temp(:,:,:,i) =  X(:,:,(3*(i-1))+1:i*3);
-    %end
-    %temp(:,:,2,i) = ones(N,N);
-    %temp(:,:,3,i) = ones(N,N);
+    end
 end
 for ii = 1:M1
     %A = X(:,:,(3*(ii-1))+1:ii*3);
@@ -48,19 +48,27 @@ for ii = 1:M1
     
     Z_TRLRTV2=LRTC_TV_II(index, value, lambda_1, lambda_2 ,alpha, beta, tsize, N );
     %Z_TRLRTV2=LRTC_TV_II(index(:,1), value, lambda_1, lambda_2 ,alpha(1), beta(1), [256 256 1], 1 );
-    result(:,:,(3*(ii-1))+1:ii*3) = Z_TRLRTV2;
+    
     %result(:,:,ii)=Z_TRLRTV2(:,:,1);
+        result(:,:,(3*(ii-1))+1:ii*3) = Z_TRLRTV2;
+
     ii
 end
 
-L =size(result,3);
+%L =size(result,3);
 %implay(result)
 [perform_RSE,perform_PSNR] = performance_eval();
 
 %%%%
 for i=1:L
-    frame = result(:,:,i);
-    Xrec(:,:,i) = frame./max(frame(:));
+    if(i > floor(L/3)*3)
+        frame = result(:,:,i+3-mod(L,3));
+        Xrec(:,:,i) = frame./max(frame(:));
+    else
+        frame = result(:,:,i);
+        Xrec(:,:,i) = frame./max(frame(:));
+    end
+
 end
 Xrec = mat2gray(Xrec);
 
