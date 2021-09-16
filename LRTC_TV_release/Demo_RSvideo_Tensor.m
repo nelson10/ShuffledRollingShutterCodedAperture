@@ -5,14 +5,15 @@ X = J;
 fprintf('--------------TR_LRTV2-------------------\n');
 
 temp = zeros(N,M,3,L);
-for i=1:L
-    for j=1:3
-        temp(:,:,j,i) =X(:,:,i);
-    end
+M1 = floor(L/3);
+for i=1:M1
+    %for j=1:3
+        temp(:,:,:,i) =  X(:,:,(3*(i-1))+1:i*3);
+    %end
     %temp(:,:,2,i) = ones(N,N);
     %temp(:,:,3,i) = ones(N,N);
 end
-for ii = 1:L
+for ii = 1:M1
     %A = X(:,:,(3*(ii-1))+1:ii*3);
     A = temp(:,:,:,ii);
     %figure(1);  implay(A)%imshow(A);
@@ -47,8 +48,8 @@ for ii = 1:L
     
     Z_TRLRTV2=LRTC_TV_II(index, value, lambda_1, lambda_2 ,alpha, beta, tsize, N );
     %Z_TRLRTV2=LRTC_TV_II(index(:,1), value, lambda_1, lambda_2 ,alpha(1), beta(1), [256 256 1], 1 );
-    %result(:,:,(3*(ii-1))+1:ii*3) = Z_TRLRTV2;
-    result(:,:,ii)=Z_TRLRTV2(:,:,1);
+    result(:,:,(3*(ii-1))+1:ii*3) = Z_TRLRTV2;
+    %result(:,:,ii)=Z_TRLRTV2(:,:,1);
     ii
 end
 
