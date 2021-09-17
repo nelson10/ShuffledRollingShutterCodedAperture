@@ -24,6 +24,7 @@ temp0 =[];
 temp1 =[];
 a1 = a(1);
 b1 = b(1);
+tensor = 1; % 0 for interpolation, 1 for tensor completion.
 x = 0;
 for i = 1:N
     for j=1:N
@@ -48,16 +49,15 @@ figure(1)
 imagesc(Y), title('Compressive Measurements using Designed Coded Apertures')
 colormap('gray')
 nnz = 0.03; % number of non-zero elements in the Tensor
-% nm = round(nnz*(N));
-% N1 = N/nm;
-% ind = round(linspace(1,256,N1));
-% gt = data(:,:,ind);
 
 [J,gt] = JointCodedApertures2(Y,mask,N,nnz,data);
 
-% Reconstruction using designed coded apertures
-%[Xrec] = interpolation(J);
-[Xrec] = Demo_RSvideo_Tensor(J);
+%% Reconstruction using designed coded apertures
+if(tensor==0)
+    [Xrec] = interpolation(J);
+else
+    [Xrec] = Demo_RSvideo_Tensor(J);
+end
 disp('Tensor Completion of Temporal Rolling Shutter Compressive Measurements Captured using Designed Coded Apertures')
 [p,s,r] = metrics(gt,Xrec);
 
@@ -71,9 +71,12 @@ imagesc(Y), title('Compressive Measurements using Random Coded Apertures')
 colormap('gray')
 
 [J,gt] = JointCodedApertures2(Y,mask,N,nnz,data);
-% Reconstruction using random coded apertures
-%[Xrec] = interpolation(J);
-[Xrec] = Demo_RSvideo_Tensor(J);
+%% Reconstruction using designed coded apertures
+if(tensor==0)
+    [Xrec] = interpolation(J);
+else
+    [Xrec] = Demo_RSvideo_Tensor(J);
+end
 disp('Completion  of Temporal Rolling Shutter Compressive Measurements Captured using Random Coded Apertures')
 [p,s,r] = metrics(gt,Xrec);
 implay(Xrec),title('Tensor Completion with Random Coded Apertures')
