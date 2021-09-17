@@ -3,8 +3,11 @@ function [Xrec] = Demo_RSvideo_Tensor(J)
 [N,M,L] =size(J);
 X = J;
 fprintf('--------------TR_LRTV2-------------------\n');
-
-temp = zeros(N,M,3,L+(3-mod(L,3)));
+if(mod(L,3)~=0)
+    temp = zeros(N,M,3,L+(3-mod(L,3)));
+else
+    temp = zeros(N,M,3,L);
+end
 M1 = size(temp,4)/3;
 for i=1:M1
     if(i==M1 & mod(L,3)~=0)
