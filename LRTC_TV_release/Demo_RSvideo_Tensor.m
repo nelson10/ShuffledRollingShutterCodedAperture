@@ -66,13 +66,17 @@ end
 for i=1:L
     if(i > floor(L/3)*3)
         frame = result(:,:,i+3-mod(L,3));
-        Xrec(:,:,i) = frame./max(frame(:));
+        Xrec(:,:,i) = frame;
+        %Xrec(:,:,i) = frame./max(frame(:));
     else
         frame = result(:,:,i);
-        Xrec(:,:,i) = frame./max(frame(:));
+        Xrec(:,:,i) = frame;
+        %Xrec(:,:,i) = frame./max(frame(:));
     end
 
 end
+%Xrec = mat2gray(Xrec);
+%Xrec = Xrec./max(Xrec(:));
 Xrec = mat2gray(Xrec);
 
 % for i=1:L
