@@ -20,7 +20,6 @@ N = 256;  % spatial size
 
 G = zeros(N,N);
 mask = zeros(N,N,N);
-psnr = zeros(N,N);
 temp0 =[];
 temp1 =[];
 a1 = a(1);
