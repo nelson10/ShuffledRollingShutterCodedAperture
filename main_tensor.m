@@ -44,6 +44,7 @@ end
 %    data1(:,:,i) = imresize(data(:,:,i),0.125);
 % end
 %data = data1;
+data = mat2gray(data);
 Y = sampling(data,mask,N); % compute compressive measurements with designed mask
 figure(1)
 imagesc(Y), title('Compressive Measurements using Designed Coded Apertures')
