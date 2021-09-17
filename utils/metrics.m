@@ -16,5 +16,5 @@ end
 p = mean(p); % psnr
 s= mean(s); % ssim
 r = mean(rm); % rmse
-disp("Unfold PSNR "+ num2str(p)+ " SSIM "+num2str(s)+" RMSE "+num2str(r));
+disp("PSNR "+ num2str(p)+ " SSIM "+num2str(s)+" RMSE "+num2str(r));
 end
