@@ -6,7 +6,7 @@ for i=1:N
 end
 
 for i=1:N
-    p(i) = psnr(data(:,:,i),Xrec(:,:,i));
+    p(i) = psnr(Xrec(:,:,i),data(:,:,i));
     s(i) = ssim(Xrec(:,:,i),data(:,:,i));
     v1= Xrec(:,:,i);
     v2= data(:,:,i);
