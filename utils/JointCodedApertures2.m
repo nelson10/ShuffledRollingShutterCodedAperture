@@ -13,6 +13,9 @@ for jj=1:N1
 end
 gt = gt1./max(gt1(:));
 
+[X] = JointCodedApertures3(Y,dmd,size(dmd,3));
+sum(X(:)~=0)./numel(X(:))
+
 X = X./max(X(:));
 sample =100*(sum(dmd(:))/numel(dmd));
 disp("number of non-zero values " + num2str(sample) + "%");
