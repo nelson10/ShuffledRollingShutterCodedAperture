@@ -30,6 +30,10 @@ for i = 1:N
     end
 end
 
+[T] = distan(G);
+m = max(T(:));
+minimum = min(T(:));
+
 
 for k=1:1
     alldataset = {'wine2','wave','splash'};
