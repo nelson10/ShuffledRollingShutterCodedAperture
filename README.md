@@ -28,15 +28,17 @@ If you use this code, please consider citing our paper with the following Bibtex
 @ARTICLE{9534664,
   author={Diaz, Nelson and Guzman, Felipe and Vera, Esteban},
   journal={Optics Express}, 
-  title={Optimal Compressive Temporal Imaging using a Shuffled Rolling Shutter}, 
+  title={Shuffled Rolling Shutter for Snapshot Temporal Imaging}, 
   year={2021},
-  volume={},
-  number={},
+  volume={30},
+  number={1},
   pages={1-1},
   doi={}}
 ```
 
-The published version is available at this [link](put link here)
+The published version is available at this [link](https://www.osapublishing.org/oe/abstract.cfm?doi=10.1364/OE.444864)
 
 
 ## Abstract
+
+We propose a modification to the rolling shutter mechanism found in CMOS detectors by shuffling the pixels in every scanline. This potential hardware modification improves the sampling of the space-time datacube allowing, the recovery of high-speed videos from a single image using either tensor completion methods or reconstruction algorithms often used for compressive temporal video. We also present a design methodology for optimal sampling schemes and compare them to random shuffling. Simulations, and experimental results obtained by optically emulating the hardware, demonstrate the ability of the shuffled rolling shutter to capture images that allow reconstructing videos, which would otherwise be impossible when using the traditional rolling shutter mechanism.
