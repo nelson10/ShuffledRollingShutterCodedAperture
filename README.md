@@ -1,5 +1,7 @@
 # Shuffled Rolling Shutter for Snapshot Temporal Imaging
 
+Esteban Vera, Felipe Guzman, [Nelson Diaz](https://nelson10.github.io),
+
 This repository contains the code to reproduce the results presented in the paper following paper:
 
 *E. Vera, F. Guzman and N. Diaz, "Shuffled Rolling Shutter for Snapshot Temporal Imaging," in Optics Express, 2022.
